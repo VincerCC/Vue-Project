@@ -1,17 +1,17 @@
 <template>
 	<div>
 		<mt-swipe :auto="4000">
-		  <mt-swipe-item v-for="item in lunbotuList" :key="item.url">
+		  <mt-swipe-item v-for="item in lunbotuList" :key="item.src">
 		  	<img :src="item.img" alt=""/>
 		  </mt-swipe-item>
 		</mt-swipe>
 		<div class="ulbox">
 			<ul class="mui-table-view mui-grid-view mui-grid-9">
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-		            	<a href="#">
-		                    <span class="mui-icon mui-icon-extra mui-icon-extra-new"></span>
+		            	<router-link to='/home/newslist'>
+		            		<span class="mui-icon mui-icon-extra mui-icon-extra-new"></span>
 		                    <div class="mui-media-body">新闻资讯</div>
-		            	</a>
+		            	</router-link>
 		            </li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
 		                    <span class="mui-icon mui-icon-image"><span class="mui-badge">5</span></span>
@@ -49,7 +49,7 @@
 		methods:{
 			getLunbotu(){
 				//获取轮播图数据
-				this.$http.get('http://www.liulongbin.top:3005/api/getlunbo').then(result=>{
+				this.$http.get('api/getlunbo').then(result=>{
 					if(result.body.status==0){//成功
 						this.lunbotuList=result.body.message;
 					}else{//失败
