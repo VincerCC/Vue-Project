@@ -20,6 +20,7 @@
 
 <script>
 	import {Toast} from 'mint-ui'
+	import axios from 'axios'
 	export default{
 		data(){
 			return {
@@ -30,16 +31,27 @@
 			this.getNews();
 		},
 		methods:{
-			getNews(){
+//			getNews(){
+//				//获取轮播图数据
+//				this.$http.get('api/getnewslist').then(result=>{
+//					if(result.body.status==0){//成功
+//						this.newsList=result.body.message;
+////						console.log(result.body.message)
+//					}else{//失败
+//						Toast('加载失败~')
+//					}
+//					
+//				})
+//			}
+//		}
+		getNews(){
 				//获取轮播图数据
-				this.$http.get('api/getnewslist').then(result=>{
-					if(result.body.status==0){//成功
-						this.newsList=result.body.message;
-//						console.log(result.body.message)
-					}else{//失败
-						Toast('加载失败~')
-					}
-					
+				axios.get('api/getnewslist').then(result=>{
+					//成功
+						this.newsList=result.data.message;
+//						console.log(result.data.message)
+				}).catch(err=>{
+					Toast("请求失败")
 				})
 			}
 		}

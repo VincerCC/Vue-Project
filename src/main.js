@@ -10,6 +10,9 @@ Vue.component(Header.name, Header);
 import {Swipe,SwipeItem} from 'mint-ui';
 Vue.component(Swipe.name,Swipe);
 Vue.component(SwipeItem.name,SwipeItem);
+//导入button
+import {Button} from 'mint-ui';
+Vue.component(Button.name, Button);
 //导入MUI库
 import './lib/MUI/css/mui.min.css'
 import './lib/MUI/css/icons-extra.css'
@@ -28,7 +31,13 @@ import vueResource from 'vue-resource'
 Vue.use(vueResource)
 //设置请求数据的根路径
 Vue.http.options.root='http://www.liulongbin.top:3005';
+Vue.http.options.emulateJSON='true';
 
+//导入axios
+import axios from 'axios'
+//设置数据根路径
+axios.defaults.baseURL = 'http://www.liulongbin.top:3005';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 //导入moment时间插件
 import moment from 'moment'
 //定义全局过滤器
