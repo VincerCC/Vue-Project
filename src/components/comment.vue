@@ -28,13 +28,13 @@
 				msg:''
 			}
 		},
-		props:["momentid"],
+		props:["id"],//拿到新闻评论页面传来的id//拿到图片详情传来的id//拿到商品评论传来的id
 		created(){
 			this.getmoments()
 		},
 		methods:{
 			getmoments(){
-				axios.get('api/getcomments/'+this.momentid+'?pageindex='+this.pageindex).then(result=>{
+				axios.get('api/getcomments/'+this.id+'?pageindex='+this.pageindex).then(result=>{
 					this.momentlist=this.momentlist.concat(result.data.message)
 					//每当获取新评论数据的时候，都要将新数据拼接到老数据后边
 //console.log(result.data.message)
@@ -65,18 +65,22 @@
 				//发表评论
 				//参数一：接口路径
 				//参数二：需要交给服务器的数据对象
+				//this.$route.params.id获取当前页面url地址上的id值
 				axios.post('api/postcomment/'+this.$route.params.id,{content:this.msg.trim()}).then(result=>{
 					if(this.msg.trim()=='')
 					{
 						return Toast("评论不允许为空")
 					}
+					//创建一个新对象保存新的评论数据
 					var cmt={
 						user_name:'匿名用户',
 						add_time:Date.now(),
 						content:this.msg.trim()
 					}
+					//将新的评论数据拼接到原始数据开头
 					this.momentlist.unshift(cmt)
 					this.msg=''
+					Toast("发表成功")
 				})
 			}
 		}

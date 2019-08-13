@@ -8,7 +8,7 @@
 		<hr>
 		<div class="content" v-html="newsinfo.content"></div>
 		<!--<div class="content" >{{newsinfo.content}}</div>因为里边数据带有html标签，所以需要用v-html渲染-->
-		<comment :momentid="this.id"></comment>
+		<comment :id="this.id"></comment>
 		<!--通过属性传值，将id传递给子组件评论组件，然后评论组件通过props拿到id -->
 	</div>
 </template>
@@ -20,8 +20,8 @@
 	export default{
 		data(){
 			return {
-				id:this.$route.params.id,
-				newsinfo:{}//将url地址中传递的id值挂载到data中
+				id:this.$route.params.id,//将url地址中传递的id值挂载到data中
+				newsinfo:{}
 			}
 		},
 		created(){
@@ -32,6 +32,7 @@
 		},
 		methods:{
 			getNewsInfo(){
+				//用axios实现数据请求
 				axios.get('api/getnew/'+this.id).then(result=>{
 					this.newsinfo=result.data.message[0]
 //					console.log(result.data.message[0])
@@ -39,7 +40,7 @@
 					Toast("请求失败")
 				})
 			}
-		}//用axios实现数据请求
+		}
 //		getNewsInfo(){
 //				this.$http.get('api/getnew/'+this.id).then(result=>{
 //					if(result.body.status==0){

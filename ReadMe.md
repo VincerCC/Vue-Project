@@ -60,4 +60,75 @@
 						});
 		坑d：引入mui.js后会报错,需要在样式中增加 * { touch-action: none; } ,然后备份tabbar样式，参照https://blog.csdn.net/qq_35737292/article/details/84938043
 			
-	2.制作底部的图片列表
+	2.制作图片列表
+		1.图片列表需要使用懒加载技术，可以用mint-ui中的组件lazy-load
+		2.渲染图片列表
+		
+##实现了点击图片跳转到图片详情页面
+	1.在改造li成router-link的时候，需要使用tag属性指定渲染为li标签
+	2.通过:to="'/home/photoinfo/'+item.id"，实现点击图片跳转到对应图片的详情
+	
+##实现获取图片详情数据，并且美化页面
+	1.通过接口地址获取到图片详情内容
+	2.通过this.$route.params.id获取到当前图片的id
+	3.对应的展示对应id的评论组件
+	4.图片缩略图，通过vue-preview实现缩略图，安装：cnpm i vue-preview -S
+		1.获取到所以图片列表
+		2.每个图片数组对象中必须有w，h属性，可以通过forEach循环每个图片数据，补全w,h
+
+##绘制商品列表基本结构并美化
+
+
+
+
+
+
+
+
+
+
+##尝试在手机端进行项目的预览
+1.保证手机和开发项目的电脑处于同一wifi环境中，也就是说手机可以访问到电脑IP
+2.打开自己的项目中package.json本间，在dev脚本中添加--host指令，把当前电脑的wifi IP地址设置为--host的指令值
+	--如何查看自己电脑所处wifi的IP呢，在cmd中运行 ipconfig，查看无线网ip地址
+3.设置好后重新run项目，将得到页面的地址输入到手机浏览器
+
+
+
+
+####this.$route是路由【参数对象】，所有路由中的参数：params（一般用来获取url中传递的参数）、query都属于他
+####this.$router是一个路由【导航对象】，用它可以方便的使用JS代码实现路由导航的前进后退跳转。
+###编程式导航：
+1.this.$router.push({path:'路由路径'+可以拼接参数})
+2.在router.js中路由routes中{path:'路由路径',component:路由,name：'路由名称'}，然后this.$router.push({name:'路由名称',parans:{id} })
+
+
+###回退前进功能的实现
+1.this.$router.go()
+
+
+###props、data、vuex的区别是：
+	1.props是存放子组件传过来的值的，data是存放私有数据的，vuex是存放公有数据的
+	2.vuex安装	npm i vuex -S
+	3.然后在main.js中 import Vuex from 'vuex'
+					 Vue.use(Vuex)
+	4.main.js创建一个store实例
+		var store = new Vuex.Store({
+  			state: {//这里存放公有数据
+  			},
+  			mutations: {
+  			//这里放方法
+  			//如果需要修改state中的数据，只能通过调用在mutations中的方法修改
+  			}
+		})
+	5.将store挂载到vm实例上，与el平级，store：store
+	6.如果在组件中要使用全局的数据，需要用this.$store.state.***去访问
+	7.如果子组件想要调用mutations中的方法，只能通过this.$store.commit('方法名',可以加上唯一的参数)调用
+	8.mutations中的方法，最多支持两个参数，其中第一个参数已经固定为state
+	9.Vuex 允许我们在 store 中定义“getters”（可以认为是 store 的计算属性）。
+		就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。
+	10.getters: {
+    		doneTodos: state => {
+      		return '我是getters'+state.count
+    		}
+  		}

@@ -1,11 +1,17 @@
 <template>
 	<div class="app-container">
-		<!--顶部header区域-->	
-		<mt-header fixed title="vue项目案例"></mt-header>
+		<!--顶部header区域-->	 
+		<mt-header  fixed title="vue项目案例">
+			<span slot="left" @click="goback" v-show="flag">
+			    <mt-button icon="back">返回</mt-button>
+			 </span>
+		</mt-header>
 		
 		
 		<!--中间的路由router-view区域-->
-		
+		<transition ><!--设置组件切换的动画-->
+			<router-view></router-view>
+		</transition>
 		
 		
 		<!--底部的路由tabbar区域-->
@@ -21,7 +27,7 @@
 			</router-link>
 			
 			<router-link class="mui-tab-items" to="/shopcar">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">0</span></span>
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="shopcar">{{$store.getters.getAllCount}}</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 
@@ -30,18 +36,43 @@
 				<span class="mui-tab-label">搜索</span>
 			</router-link>
 		</nav>
-		<transition ><!--设置组件切换的动画-->
-			<router-view></router-view>
-		</transition>
+		
 		
 	</div>
 </template>
 
 <script>
-
+	export default{
+		data(){
+			return {
+				flag:false
+			}
+		},
+		created(){
+			if(this.$route.path=='/home'){
+					this.flag=false
+				}else{
+					this.flag=true
+				}
+		},
+		methods:{
+			goback(){//点击后退
+				this.$router.go(-1)
+			}
+		},
+		watch:{//监听路由地址变化
+			'$route.path':function(newval){
+				if(newval=='/home'){
+					this.flag=false
+				}else{
+					this.flag=true
+				}
+			}
+		}
+	}
 </script>
 
-<style>
+<style scoped="scoped">
 	*{
 		margin:0;
 		padding: 0;
@@ -50,6 +81,9 @@
 		margin-top: 40px;
 		margin-bottom: 51px;
 		overflow-x: hidden;
+	}
+	.mint-header{
+		z-index: 99!important;
 	}
 	.v-enter{
 		opacity: 0;
