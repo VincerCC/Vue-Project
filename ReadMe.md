@@ -74,7 +74,16 @@
 	3.对应的展示对应id的评论组件
 	4.图片缩略图，通过vue-preview实现缩略图，安装：cnpm i vue-preview -S
 		1.获取到所以图片列表
-		2.每个图片数组对象中必须有w，h属性，可以通过forEach循环每个图片数据，补全w,h
+		2.每个图片数组对象中必须有w，h属性，为大图的宽高，可以通过forEach循环每个图片数据，补全w,h
+		3.设置小图宽高 不能用scoped
+			.thumbs .my-gallery figure{
+				display: inline-block;
+				margin: 5px;
+			}
+			 .thumbs .my-gallery figure img{
+				width: 80px;
+				height: 80px;
+			}
 
 ##绘制商品列表基本结构并美化
 

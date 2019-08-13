@@ -1,7 +1,7 @@
 <template>
 	<div class="app-container">
 		<!--顶部header区域-->	 
-		<mt-header  fixed title="vue项目案例">
+		<mt-header  fixed title="刘颖聪vue项目案例">
 			<span slot="left" @click="goback" v-show="flag">
 			    <mt-button icon="back">返回</mt-button>
 			 </span>
@@ -21,19 +21,16 @@
 				<span class="mui-tab-label">首页</span>
 			</router-link>
 			
-			<router-link class="mui-tab-items" to="/member">
-				<span class="mui-icon mui-icon-contact"></span>
-				<span class="mui-tab-label">通讯录</span>
-			</router-link>
+			
 			
 			<router-link class="mui-tab-items" to="/shopcar">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="shopcar">{{$store.getters.getAllCount}}</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 
-			<router-link class="mui-tab-items" to="/search">
-				<span class="mui-icon mui-icon-search"></span>
-				<span class="mui-tab-label">搜索</span>
+			<router-link class="mui-tab-items" to="/member">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">关于我</span>
 			</router-link>
 		</nav>
 		

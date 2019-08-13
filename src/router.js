@@ -2,7 +2,6 @@ import VueRouter from 'vue-router'
 import home from './components/tabbars/home.vue'
 import member from './components/tabbars/member.vue'
 import shopcar from './components/tabbars/shopcar.vue'
-import search from './components/tabbars/search.vue'
 import newlist from './components/news/newslist.vue'
 import newsinfo from './components/news/newsinfo.vue'
 import photo from './components/photos/photo.vue'
@@ -18,7 +17,6 @@ var router=new VueRouter({
 		{path:'/home',component:home},
 		{path:'/member',component:member},
 		{path:'/shopcar',component:shopcar},
-		{path:'/search',component:search},
 		{path:'/home/newslist',component:newlist},
 		{path:'/home/newsinfo/:id',component:newsinfo},
 		{path:'/home/photo',component:photo},

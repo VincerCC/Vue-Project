@@ -33,7 +33,7 @@
 						<p>总计（不含运费）</p>
 						<p> 已勾选商品<span class="hongse">{{$store.getters.getshopprice.count}}</span> 件，总价<span class="hongse">￥{{$store.getters.getshopprice.price}}</span></p>
 					</div>
-					<mt-button type="danger">去结算</mt-button>
+					<mt-button type="danger" @click="msg">去结算</mt-button>
 				</div>
 			</div>
 		</div>
@@ -45,6 +45,7 @@
 <script>
 	import shopcarnumbox from '../shopcarnumbox.vue'
 	import axios from 'axios'
+	import {Toast} from 'mint-ui'
 	export default{
 		data(){
 			return {
@@ -78,6 +79,9 @@
 			selectChange(id,val){
 				//每当点击开关把最新的开关状态同步到store中
 				this.$store.commit('updateSelect',{id:id,select:val})
+			},
+			msg(){
+				Toast('暂未开放~')
 			}
 		},
 		components:{

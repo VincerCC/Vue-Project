@@ -12,7 +12,7 @@
 			<vue-preview :slides="slide1" @close="handleClose"></vue-preview>
 		</div>
 		
-		<!--图片内容区域-->
+		<!--文字内容区域-->
 		<div class="content" v-html="photoinfos.content"></div>
 		
 		
@@ -57,7 +57,7 @@
 					})
 					//把完整的数据保存到slide1数组中
 					this.slide1=result.data.message
-//console.log(result)
+//console.log(this.slide1)
 				})
 			},
 			handleClose () {
