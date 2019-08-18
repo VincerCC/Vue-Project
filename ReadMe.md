@@ -54,7 +54,7 @@
 	1.制作顶部的滑动条
 		坑a：需要借助于MUI中的tab-top-webview-main.html中的样式
 		坑b：MUI提供的slider中包含mui-fullscreen类，作用是强制全屏显示，需要取消这个类，否则顶部会挤到最上面
-		坑c：刚开始不能滑动，需要导入mui.js文件，然后初始化scroll.
+		坑c：刚开始不能滑动，需要导入mui.js文件，然后初始化scroll....
 				初始化：mui('.mui-scroll-wrapper').scroll({
 							deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 						});
