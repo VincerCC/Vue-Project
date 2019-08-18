@@ -25,9 +25,7 @@
 					<p>	电话：15219173446</p>
                     <p> 邮箱：858860068@qq.com</p>
               		<h1>扫一扫加我微信</h1>
-					</div>
-					<div class="thumbs">
-						<vue-preview :slides="slide1" @close="handleClose"></vue-preview>
+					<img src="../../images/wechat.jpg" alt="">
 					</div>
 				</div>
 		</div>
@@ -39,14 +37,6 @@
 	export default{
 		data(){
 			return {
-				slide1:[
-					{
-						src:'../../images/wechat.jpg',
-						msrc:'../../images/wechat.jpg',
-						w:600,
-						h:600
-					}
-				]
 			}
 		},
 		methods:{
@@ -88,6 +78,13 @@
 		margin: 5px;
 	}
 	 .thumbs .my-gallery figure img{
+		width: 200px;
+		height: 200px;
+	}
+	.mui-card-content-inner{
+		text-align: center;
+	}
+	.mui-card-content-inner img{
 		width: 200px;
 		height: 200px;
 	}
