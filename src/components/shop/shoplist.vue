@@ -79,9 +79,7 @@
 		margin: 0;
 		padding: 5px;
 	}
-	.shopinfo .price{
-		
-	}
+	
 	.shopinfo .sell{
 		display: flex;
 		justify-content: space-between;
