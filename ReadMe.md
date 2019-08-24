@@ -113,17 +113,17 @@ cnpm i moment -S
 
 
 ###props、data、vuex的区别是：
-1.props是存放子组件传过来的值的，data是存放私有数据的，vuex是存放公有数据的
-2.vuex安装	
+1. props是存放子组件传过来的值的，data是存放私有数据的，vuex是存放公有数据的
+2. vuex安装	
 ```
 npm i vuex -S
 ```
-3.然后在main.js中 
+3. 然后在main.js中 
  ```
 import Vuex from 'vuex'
 Vue.use(Vuex)
  ```
-4.main.js创建一个store实例
+4. main.js创建一个store实例
   ```
 		var store = new Vuex.Store({
   			state: {//这里存放公有数据
@@ -134,16 +134,16 @@ Vue.use(Vuex)
   			}
 		})
   ```
-5.将store挂载到vm实例上，与el平级，
+5. 将store挂载到vm实例上，与el平级，
 ```
 store：store
 ```
-6.如果在组件中要使用全局的数据，需要用this.$store.state.***去访问
-7.如果子组件想要调用mutations中的方法，只能通过this.$store.commit('方法名',可以加上唯一的参数)调用
-8.mutations中的方法，最多支持两个参数，其中第一个参数已经固定为state
-9.Vuex 允许我们在 store 中定义“getters”（可以认为是 store 的计算属性）。
+6. 如果在组件中要使用全局的数据，需要用this.$store.state.***去访问
+7. 如果子组件想要调用mutations中的方法，只能通过this.$store.commit('方法名',可以加上唯一的参数)调用
+8. mutations中的方法，最多支持两个参数，其中第一个参数已经固定为state
+9. Vuex 允许我们在 store 中定义“getters”（可以认为是 store 的计算属性）。
 		就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。
-10.
+10. 
 ```
 getters: {
     		doneTodos: state => {
