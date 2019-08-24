@@ -1,45 +1,43 @@
-###很牛逼
 
-##制作首页
+
+## 制作首页
 1. 完成header区域，使用的是Mint-UI中的header组件
 2. 制作tabbar区域，使用的是MUI中的tabber组件
 	+在制作购物车图标时候，先把扩展图标的icons-extra.css样式拷贝到项目中
 	+也要拷贝fonts下边的mui-icons-extra.ttf文件到项目中
 3. 中间区域放置一个router-view来展示路由匹配到的组件
 
-##改造tabbar为router-link
+## 改造tabbar为router-link
 
-##点击tabbar的路由连接，展示对应的路由组件
+## 点击tabbar的路由连接，展示对应的路由组件
 
-##轮播图制作
-
-##加载轮播图数据
+## 轮播图制作,加载轮播图数据
 1. 获取数据，使用vue-resource, cnpm i vue-resource -S  安装
 2. 使用vue-resource的this.$http.get('')获取数据
 3. 将获取到的数据放到data的lunbotuList上
 4. 用v-for循环渲染每一项
 
-##九宫格区域
+## 九宫格区域
 1. 用MUI提供的九宫格
 2. 设置样式
 
-##创建新闻路由连接
+## 创建新闻路由连接
 1. 绘制界面，使用MUI中的media-list.html
 2. 使用vue-resource获取数据
 
-##main.js中创建全局过滤器格式化时间格式
+## main.js中创建全局过滤器格式化时间格式
 1. 先安装时间插件 
 ```
 cnpm i moment -S
 ```
 2. main.js中导入moment
 
-##实现新闻资讯列表点击跳转到新闻详情
+## 实现新闻资讯列表点击跳转到新闻详情
 1. 把列表的每一项a标签改造为router-link
 2. 创建新闻详情组件页面newsinfo.vue
 3. 在路由模块中，将新闻详情的	路由地址	和	新闻详情	对应起来
 
-##评论区域设置
+## 评论区域设置
 1. 加载更多:
 		1.绑定点击事件
 		2.点击后拿到下一页数据，pageindex++，再调用getmoments()
@@ -53,7 +51,7 @@ cnpm i moment -S
 			把最新的评论追加到data中momentlist的开头位置
 			
 			
-##图片列表
+## 图片列表
 1. 制作顶部的滑动条
 		坑a：需要借助于MUI中的tab-top-webview-main.html中的样式
 		坑b：MUI提供的slider中包含mui-fullscreen类，作用是强制全屏显示，需要取消这个类，否则顶部会挤到最上面
@@ -70,11 +68,11 @@ cnpm i moment -S
 		1.图片列表需要使用懒加载技术，可以用mint-ui中的组件lazy-load
 		2.渲染图片列表
 		
-##实现了点击图片跳转到图片详情页面
+## 实现了点击图片跳转到图片详情页面
 1. 在改造li成router-link的时候，需要使用tag属性指定渲染为li标签
 2. 通过:to="'/home/photoinfo/'+item.id"，实现点击图片跳转到对应图片的详情
 	
-##实现获取图片详情数据，并且美化页面
+## 实现获取图片详情数据，并且美化页面
 1. 通过接口地址获取到图片详情内容
 2. 通过this.$route.params.id获取到当前图片的id
 3. 对应的展示对应id的评论组件
@@ -92,7 +90,7 @@ cnpm i moment -S
 				height: 80px;
 			}
 		```
-##尝试在手机端进行项目的预览
+## 尝试在手机端进行项目的预览
 1. 保证手机和开发项目的电脑处于同一wifi环境中，也就是说手机可以访问到电脑IP
 2. 打开自己的项目中package.json本间，在dev脚本中添加--host指令，把当前电脑的wifi IP地址设置为--host的指令值
 	--如何查看自己电脑所处wifi的IP呢，在cmd中运行 ipconfig，查看无线网ip地址
@@ -101,20 +99,20 @@ cnpm i moment -S
 
 
 
-####this.$route是路由【参数对象】，所有路由中的参数：params（一般用来获取url中传递的参数）、query都属于他
-####this.$router是一个路由【导航对象】，用它可以方便的使用JS代码实现路由导航的前进后退跳转。
-###编程式导航：
+#### this.$route是路由【参数对象】，所有路由中的参数：params（一般用来获取url中传递的参数）、query都属于他
+#### this.$router是一个路由【导航对象】，用它可以方便的使用JS代码实现路由导航的前进后退跳转。
+## 编程式导航：
 1. this.$router.push({path:'路由路径'+可以拼接参数})
 2. 在router.js中路由routes中{path:'路由路径',component:路由,name：'路由名称'}，然后this.$router.push({name:'路由名称',parans:{id} })
 
 
-###回退前进功能的实现
+## 回退前进功能的实现
 1. this.$router.go()
 
-
-###props、data、vuex的区别是：
-1. props是存放子组件传过来的值的，data是存放私有数据的，vuex是存放公有数据的
-2. vuex安装	
+tips:
+//props、data、vuex的区别是：
+//1. props是存放子组件传过来的值的，data是存放私有数据的，vuex是存放公有数据的
+//2. vuex安装	
 ```
 npm i vuex -S
 ```
