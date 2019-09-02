@@ -1,6 +1,5 @@
 ### 项目预览：
 
-一个仿外卖的vue单页应用程序Web App（spa），包含常见的功能
 1. app首页&购物车&关于我
 ![img](https://github.com/VincerCC/Vue-Project/blob/master/image/%E9%A6%96%E9%A1%B5%26%E8%B4%AD%E7%89%A9%E8%BD%A6%26%E5%85%B3%E4%BA%8E%E6%88%91.png)
 2. 新闻资讯&新闻详情
