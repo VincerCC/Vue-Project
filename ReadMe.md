@@ -1,14 +1,14 @@
 ### 项目预览：
 
 一个仿外卖的vue单页应用程序Web App（spa），包含常见的功能
-1. app首页及导航页
-![img](https://github.com/VincerCC/vuefood/blob/master/image/app%E9%A6%96%E9%A1%B5.png)
-2. 商品列表&购物车&商品详情
-![img](https://github.com/VincerCC/vuefood/blob/master/image/%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8.png)
-3. 短信登录&账号密码登录
-![img](https://github.com/VincerCC/vuefood/blob/master/image/%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.png)
-4. 评论&商家信息&商家图片
-![img](https://github.com/VincerCC/vuefood/blob/master/image/%E8%AF%84%E8%AE%BA%26%E5%95%86%E5%AE%B6%E4%BF%A1%E6%81%AF%26%E5%95%86%E5%AE%B6%E5%9B%BE%E7%89%87.png)
+1. app首页&购物车&关于我
+![img](https://github.com/VincerCC/Vue-Project/blob/master/image/%E9%A6%96%E9%A1%B5%26%E8%B4%AD%E7%89%A9%E8%BD%A6%26%E5%85%B3%E4%BA%8E%E6%88%91.png)
+2. 新闻资讯&新闻详情
+![img](https://github.com/VincerCC/Vue-Project/blob/master/image/%E6%96%B0%E9%97%BB%E8%B5%84%E8%AE%AF%26%E6%96%B0%E9%97%BB%E8%AF%A6%E6%83%85.png)
+3. 图片资讯&图片详情
+![img](https://github.com/VincerCC/Vue-Project/blob/master/image/%E5%9B%BE%E7%89%87%E5%88%86%E4%BA%AB%26%E5%9B%BE%E7%89%87%E8%AF%A6%E6%83%85.png)
+4. 商品购买&商品详情&商品图文&商品评论
+![img](https://github.com/VincerCC/Vue-Project/blob/master/image/%E5%95%86%E5%93%81%E8%B4%AD%E4%B9%B0%26%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85%26%E5%95%86%E5%93%81%E5%9B%BE%E6%96%87%26%E5%95%86%E5%93%81%E8%AF%84%E8%AE%BA.png)
 
 ### 项目启动
 下载下来后，在根路径中打开cmd运行
